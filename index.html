@@ -28,7 +28,7 @@
     letter-spacing: -.7 px;
   }
 
-  div.headerxd div {
+  < !-- Acomodar escudos de equipos -- div.headerxd div {
     margin-bottom: -40;
   }
 
@@ -42,6 +42,40 @@
     justify-content: center;
 
   }
+
+  < !-- Animación barra de búsqueda -- .search-click {
+    border: 1 px solid #ccc;
+    outline: none;
+    background-size: 22 px;
+    background-position: 13 px;
+    border-radius: 10 px;
+    width: 50 px;
+    height: 50 px;
+    padding: 25 px;
+    transition: all 0.5 s;
+  }
+
+  .search-click:focus {
+    width: 300 px;
+    padding-left: 50 px;
+  }
+
+  .search-click {
+    position: relative;
+    overflow: hidden;
+    height: 50 px;
+  }
+
+  .search-click input {
+    background: transparent;
+    border: 1 px solid #ccc;
+    outline: none;
+    position: absolute;
+    width: 300 px;
+    height: 50 px;
+    left: 0 auto;
+    padding: 10 px;
+  }
 </style>
 
 <head>
@@ -54,20 +88,20 @@
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 
-<body>
-
-  <header class="header pt-1">
-    <div class="headerxd row flex-nowrap justify-content-between align-items-center container-fluid">
+<body style="background-color: #fffcfc;">
+  <header class="header pt-1 ">
+    <div class="headerxd row flex-nowrap justify-content-between align-items-center container-fluid d-none d-sm-block">
       <div class="col-4 pt-1">
         <img src="lo+trend.JPG" alt="lo+trend" width="10%" height="10%">
         <a class=" text-dark" href="#">Lo + Trending</a>
       </div>
-      <div class="col-4 align-middle">
-        <img src="marcalogotipo.jpg" alt="MARCA" width="30%" height="30%">
+      <div class="col-3 align-middle">
+        <img src="marcalogotipo.jpg" alt="MARCA" width="100%" height="5%">
       </div>
-      <div>
-        <a class="btn btn-sm btn-outline-danger bg-danger text-white mx-0" href="#">Subscribete</a>
-        <a class="btn btn-sm btn-outline-black-50 text-danger border border-black" href="#">Iniciar sesión</a>
+      <div id="button">
+        <a class="btn btn-sm btn-outline-danger text-white mx-0" style="background-color: #e01404"
+          href="#">Subscribete</a>
+        <a class="btn btn-sm btn-outline-black-50 text-danger border border-black" href="#">Inicia sesión</a>
       </div>
   </header>
 
@@ -76,33 +110,34 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
+  <nav class="navbar navbar-expand-lg navbar-light justify-content-left"
+    style="position: relative; bottom: 40px; left: -6px">
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#nav-principal"
       aria-expanded="false" aria-label="Navegación Principal">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="nav-principal" class="navbar-collapse mt-4 mt-lg-0 collapse py-1 mb-2 bg-danger">
+    <div id="nav-principal" class="navbar-collapse mt-4 mt-lg-0 collapse py-1 mb-2" style="background-color: #e01404">
       <nav
-        class="text-white navegacion-principal nav justify-content-between container flex-column flex-lg-row text-center">
+        class="text-white navegacion-principal nav justify-content-betweeen container flex-column flex-lg-row text-center">
         <a href="#" class="nav-link dropdown-toggle text-white" id="deportesDropdown" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <strong>Fútbol</a></strong>
         <div class="dropdown-menu aria-labelledby=" anunciosDropdown>
-          <a href="#" class="dropdown-item">Liga MX</a>
+          <a href="#" class="dropdown-item">Liga MXWDA</a>
           <a href="#" class="dropdown-item">Liga de Expansión MX</a>
           <a href="#" class="dropdown-item">Copa MX</a>
           <a href="#" class="dropdown-item">Concachampions</a>
           <a href="#" class="dropdown-item">Mexicanos por el mundo</a>
-          <a href="#" class="dropdown-item"></a>
+          <a href="#" class="dropdown-item">ye</a>
         </div>
-        <a href="#" class="nav-link dropdown-toggle text-white" id="deportesDropdown" data-toggle="dropdown"
+        <a href="#" class="nav-link dropdown-toggle text-white" id="deportesDropdown2" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <strong>Fútbol Internacional</a></strong>
-        <div class="dropdown-menu aria-labelledby=" anunciosDropdown>
-          <a href="#" class="dropdown-item">1</a>
-          <a href="#" class="dropdown-item">2</a>
-          <a href="#" class="dropdown-item">3</a>
+        <div class="dropdown-menu aria-labelledby=" anunciosDropdown2>
+          <a href="#" class="dropdown-item">1DACASCWF</a>
+          <a href="#" class="dropdown-item">2KKNKDA</a>
+          <a href="#" class="dropdown-item">3MCOMOWM</a>
         </div>
         <a href="#" class="nav-link dropdown-toggle text-white" id="deportesDropdown" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -138,13 +173,14 @@
         </div>
         <div class="main-header-container">
           <div class="main-header-search" aria-label="Buscador">
-            <input type="search" name="q" placeholder="Buscar en marca.com" title="Buscar en marca.com">
+            <!-- <input type="text" class="search-click" name="" placeholder="Busca en Marca..." /> -->
+            <input type="text" class="search-click" name="barra" placeholder="Buscar 🔍 " />
           </div>
       </nav>
     </div>
     </div>
   </nav>
-  <div class="container list container-fluid">
+  <div class="container list container-fluid d-none d-sm-block">
     <ul class="equipos">
       <li><img src="1america.png" alt="america" width="30"></li>
       <li><img src="2atlas.png" alt="atlas" width="30"></li>
@@ -182,10 +218,10 @@
   </div>
   <div class="container-fluid pt-0 ">
 
-    <div class="jumbotron jumbotron-fluid bg-danger py-2 mb-1">
+    <div class="jumbotron jumbotron-fluid py-2 mb-1" style="background-color: #e01404">
       <div class="container-fluid justify-content-center">
         <div class="row align-items-center">
-          <div class="col-sm-3 border-0 rounded text-center">
+          <div class="col-sm-3 border- rounded text-center">
 
             <div class="container ">
               <t1 class="text-white ">¡YA ESTÁN AQUI!</t1>
@@ -219,11 +255,11 @@
                               <tbody>
                                 <tr>
 
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">PUMAS</td>
+                                  <td><img src="13pumas.png" alt="" style="width: 7%;"> Pumas</td>
                                   <td>0</td>
                                 </tr>
                                 <tr class="font-weight-bold">
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">ATLAS</td>
+                                  <td><img src="2atlas.png" alt="" style="width: 7%;"> Atlas</td>
                                   <td>2</td>
                                 </tr>
                               </tbody>
@@ -240,11 +276,11 @@
                               </thead>
                               <tbody>
                                 <tr class="font-weight-bold">
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">CHIVAS</td>
+                                  <td><img src="5chivas.png" alt="" style="width: 7%;"> Chivas</td>
                                   <td>27</td>
                                 </tr>
                                 <tr>
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">PACHUCA</td>
+                                  <td><img src="11pachuca.png" alt="" style="width: 7%;"> Pachuca</td>
                                   <td>0</td>
                                 </tr>
                               </tbody>
@@ -267,11 +303,11 @@
                               <tbody>
                                 <tr>
 
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">NECAXA</td>
+                                  <td><img src="10necaxa.png" alt="" style="width: 7%;"> Necaxa</td>
                                   <td>1</td>
                                 </tr>
                                 <tr class="font-weight-bold">
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">REAL MADRID</td>
+                                  <td><img src="19realmadrid.png" alt="" style="width: 7%;"> Real Madrid</td>
                                   <td>6</td>
                                 </tr>
                               </tbody>
@@ -283,17 +319,17 @@
                                 border-bottom">
                               <thead>
                                 <tr>
-                                  <th scope="col" colspan="2" class="text-center">FINALIZADO</th>
+                                  <th scope="col" colspan="2" class="text-center"> FINALIZADO</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr class="font-weight-bold">
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">TIGRES</td>
+                                  <td><img src="16tigres.png" alt="" style="width: 7%;"> Tigres</td>
                                   <td>2</td>
                                 </tr>
                                 <tr class="font-weight-bold">
 
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">AMERICA</td>
+                                  <td><img src="1america.png" alt="" style="width: 7%;"> América</td>
                                   <td>2</td>
                                 </tr>
                               </tbody>
@@ -311,17 +347,17 @@
                                 border-bottom">
                               <thead>
                                 <tr>
-                                  <th scope="col" colspan="2" class="text-center">FINALIZADO</th>
+                                  <th scope="col" colspan="2" class="text-center"> FINALIZADO</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr class="font-weight-bold">
 
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">SANTOS</td>
+                                  <td><img src="15santos.png" alt="" style="width: 7%;"> Santos</td>
                                   <td>2</td>
                                 </tr>
                                 <tr>
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">QUERETARO</td>
+                                  <td><img src="14queretaro.png" alt="" style="width: 7%;"> Querétaro</td>
                                   <td>3</td>
                                 </tr>
                               </tbody>
@@ -338,12 +374,12 @@
                               </thead>
                               <tbody>
                                 <tr class="font-weight-bold">
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">CRUZ AZUL</td>
+                                  <td><img src="4cruzazul.png" alt="" style="width: 7%;"> Cruz Azul</td>
                                   <td>2</td>
                                 </tr>
                                 <tr>
 
-                                  <td><img src="provIcon.png" alt="" style="width: 3%;">TOLUCA</td>
+                                  <td><img src="18toluca.png" alt="" style="width: 7%;"> Toluca</td>
                                   <td>0</td>
                                 </tr>
                               </tbody>
@@ -692,20 +728,20 @@
     </div>
   </div>
   </div>
-  <footer class="footer-07 bg-light">
+  <footer class="footer-07" style="background-color: #302c2c">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-12 text-center text-dark">
+        <div class="col-md-12 text-center text-white">
           <p class="menu">
-            <a href="#">Política de cookies</a>
-            <a href="#">Configuración de cookies</a>
-            <a href="#">Política de privacidad </a>
-            <a href="#">Contacto </a>
-            <a href="#">Ayuda </a>
+          <p>Política de cookies</p>
+          <p>Configuración de cookies</p>
+          <p>Política de privacidad </p>
+          <p>Contacto </p>
+          <p>Ayuda </p>
           </p>
 
           <div class="row mt-1">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center text-white">
               <p class="copyright">
                 © Octubre 2022 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados. </p>
             </div>
