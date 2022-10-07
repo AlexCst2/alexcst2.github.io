@@ -32,7 +32,7 @@
     letter-spacing: -.7 px;
   }
 
-  <!-- Acomodar escudos de equipos -- div.headerxd div {
+  < !-- Acomodar escudos de equipos -- div.headerxd div {
     margin-bottom: -40;
   }
 
@@ -47,7 +47,7 @@
 
   }
 
-  <!-- Animación barra de búsqueda -- .search-click {
+  < !-- Animación barra de búsqueda -- .search-click {
     border: 1 px solid #ccc;
     outline: none;
     background-size: 22 px;
@@ -77,10 +77,157 @@
     position: absolute;
     width: 300 px;
     height: 50 px;
-    left: 0;
+    left: 0 auto;
     padding: 10 px;
   }
-  
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    font-family: acumin-pro, system-ui, sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    align-items: start;
+    min-height: 100vh;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 30px 20px 30px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .footer>* {
+    flex: 1 100%;
+  }
+
+  .footer__addr {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
+  }
+
+  .footer__logo {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    text-transform: lowercase;
+    font-size: 1.5rem;
+  }
+
+  .footer__addr h2 {
+    margin-top: 1.3em;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .nav__title {
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  .footer address {
+    font-style: normal;
+    color: #999;
+  }
+
+  .footer__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    max-width: max-content;
+    background-color: rgb(33, 33, 33, 0.07);
+    border-radius: 100px;
+    color: #2f2f2f;
+    line-height: 0;
+    margin: 0.6em 0;
+    font-size: 1rem;
+    padding: 0 1.3em;
+  }
+
+  .footer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .footer li {
+    line-height: 2em;
+  }
+
+  .footer a {
+    text-decoration: none;
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .footer__nav>* {
+    flex: 1 50%;
+    margin-right: 1.25em;
+  }
+
+  .nav__ul a {
+    color: #999;
+  }
+
+  .nav__ul--extra {
+    column-count: 2;
+    column-gap: 1.25em;
+  }
+
+  .legal {
+    display: flex;
+    flex-wrap: wrap;
+    color: #999;
+  }
+
+  .legal__links {
+    display: flex;
+    align-items: center;
+  }
+
+  .heart {
+    color: #2f2f2f;
+  }
+
+  @media screen and (min-width: 24.375em) {
+    .legal .legal__links {
+      margin-left: auto;
+    }
+  }
+
+  @media screen and (min-width: 40.375em) {
+    .footer__nav>* {
+      flex: 1;
+    }
+
+    .nav__item--extra {
+      flex-grow: 2;
+    }
+
+    .footer__addr {
+      flex: 1 0px;
+    }
+
+    .footer__nav {
+      flex: 2 0px;
+    }
+  }
 </style>
 
 <head>
@@ -106,88 +253,91 @@
           <img src="marcalogotipo.jpg" alt="MARCA" width="100%" height="5%">
         </div>
         <div id="button">
-          <a class="btn btn-sm btn-outline-danger text-white" style="background-color: #e01404"
-            href="#">Subscribete</a>
+          <a class="btn btn-sm btn-outline-danger text-white" style="background-color: #e01404" href="#">Subscribete</a>
           <a class="btn btn-sm btn-outline-black-50 text-danger border border-black" href="#">Inicia sesión</a>
         </div>
     </header>
   </div>
-  
+
   <nav class="navbar sticky-top navbar-expand-md navbar-dark" style="background-color: #e01404">
     <!-- <a class="navbar-brand d-md-none font-weight-bold" href="#">MARCA</a> -->
     <img src="marcalogotipo.jpg" alt="MARCA" width="30%">
 
     <div>
-      <a class="btn btn-sm btn-outline-danger text-danger bg-white"
-            href="#">Inicia sesión</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="btn btn-sm btn-outline-danger text-danger bg-white" href="#">Inicia sesión</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-    
-    
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <div class="container-fluid ml-5">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Fútbol
-              </a>
-              <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-white font-weight-bold" href="#">1</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">2</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">3</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Fútbol Internacional
-              </a>
-              <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-white font-weight-bold" href="#">a</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">b</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">c</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Motor
-              </a>
-              <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-white font-weight-bold" href="#">x</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">y</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">z</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Otros deportes
-              </a>
-              <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-white font-weight-bold" href="#">a</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">e</a>
-                <a class="dropdown-item text-white font-weight-bold" href="#">i</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white font-weight-bold" href="#">Más +</a>
-            </li>
-          </ul>
-          
-          <form class="form-inline ml-auto mr-5 my-lg-0">
-            
-            <input class="form-control mr-sm-2" type="search" placeholder="Busca en Marca 🔎 " aria-label="Search">
-          </form>
-        </div>
-        
-        
 
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <div class="container-fluid ml-5">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fútbol
+            </a>
+            <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">1</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">2</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fútbol Internacional
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">a</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">b</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">c</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Motor
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">x</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">y</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">z</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Otros deportes
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">a</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">e</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">i</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white font-weight-bold" href="#">Más +</a>
+          </li>
+        </ul>
+
+        <form class="form-inline ml-auto mr-5 my-lg-0">
+
+          <input class="form-control mr-sm-2" type="search" placeholder="Busca en Marca 🔎 " aria-label="Search">
+        </form>
       </div>
-    
-    
+
+
+
+    </div>
+
+
   </nav>
-    
-  
+
+
   <div class="container-fluid pt-3 pb-1 bg-light align-items-center list container-fluid d-none d-sm-block">
     <div class="container">
       <ul class="equipos">
@@ -211,9 +361,9 @@
         <li><img src="18toluca.png" alt="toluca" width="30"></li>
       </ul>
     </div>
-    
+
   </div>
-  
+
   <div class="col-4 d-flex justify-content-end align-items-center" style="padding-right: 10%;">
     <a class="text-white" href="#" aria-label="Search">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
@@ -248,27 +398,27 @@
             <div class="row">
               <div class="col-1">
                 <li style="width: 100%;" class="carousel-control-prev badge-danger ml-2" role="button"
-                href="#carouselExampleCaptions" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                  href="#carouselExampleCaptions" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
                 </li>
               </div>
 
               <div class="col-10">
                 <div class="container-fluid bg-white ">
-              
-             
+
+
 
                   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    
+
                     <div class="row justify-content-center">
-    
+
                       <div class="col-md-12">
                         <div class="carousel-inner">
                           <div class="carousel-item active">
                             <div class="row ">
                               <div class="col-md-6">
-    
+
                                 <table class="table table-hover table-sm table
                                     border-bottom">
                                   <thead>
@@ -278,7 +428,7 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-    
+
                                       <td><img src="13pumas.png" alt="" style="width: 7%;"> Pumas</td>
                                       <td>0</td>
                                     </tr>
@@ -289,7 +439,7 @@
                                   </tbody>
                                 </table>
                               </div>
-    
+
                               <div class="col-md-6">
                                 <table class="table table-hover table-sm table
                                     border-bottom">
@@ -312,11 +462,11 @@
                               </div>
                             </div>
                           </div>
-    
+
                           <div class="carousel-item">
                             <div class="row">
                               <div class="col-md-6">
-    
+
                                 <table class="table table-hover table-sm table
                                     border-bottom">
                                   <thead>
@@ -326,9 +476,9 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-    
+
                                       <td><img src="10necaxa.png" alt="" style="width: 7%;"> Necaxa</td>
-                                      <td>1</td>  
+                                      <td>1</td>
                                     </tr>
                                     <tr class="font-weight-bold">
                                       <td><img src="19realmadrid.png" alt="" style="width: 7%;"> Real Madrid</td>
@@ -337,7 +487,7 @@
                                   </tbody>
                                 </table>
                               </div>
-    
+
                               <div class="col-md-6">
                                 <table class="table table-hover table-sm table
                                     border-bottom">
@@ -352,21 +502,21 @@
                                       <td>2</td>
                                     </tr>
                                     <tr class="font-weight-bold">
-    
+
                                       <td><img src="1america.png" alt="" style="width: 7%;"> América</td>
                                       <td>2</td>
                                     </tr>
                                   </tbody>
                                 </table>
                               </div>
-    
+
                             </div>
                           </div>
-    
+
                           <div class="carousel-item">
                             <div class="row">
                               <div class="col-md-6">
-    
+
                                 <table class="table table-hover table-sm table
                                     border-bottom">
                                   <thead>
@@ -376,7 +526,7 @@
                                   </thead>
                                   <tbody>
                                     <tr class="font-weight-bold">
-    
+
                                       <td><img src="15santos.png" alt="" style="width: 7%;"> Santos</td>
                                       <td>2</td>
                                     </tr>
@@ -387,7 +537,7 @@
                                   </tbody>
                                 </table>
                               </div>
-    
+
                               <div class="col-md-6">
                                 <table class="table table-hover table-sm table
                                     border-bottom">
@@ -402,41 +552,41 @@
                                       <td>2</td>
                                     </tr>
                                     <tr>
-    
+
                                       <td><img src="18toluca.png" alt="" style="width: 7%;"> Toluca</td>
                                       <td>0</td>
                                     </tr>
                                   </tbody>
                                 </table>
                               </div>
-    
+
                             </div>
                           </div>
-    
+
                         </div>
                       </div>
                     </div>
                   </div>
-    
-                  
-                    
-                  
-    
-                  
-    
+
+
+
+
+
+
+
                 </div>
               </div>
 
               <div class="col-1">
                 <li style="width: 100%;" class="carousel-control-next badge-danger mr-2" role="button"
-                href="#carouselExampleCaptions" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                  href="#carouselExampleCaptions" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
                 </li>
               </div>
             </div>
 
-          
+
           </div>
         </div>
       </div>
@@ -536,7 +686,8 @@
                         HUMILDES</t1>
                       <b1 href="#">MADRE MIA, EL BICHO. EL BICHO. ¡EL
                         BICHOOOOO!</b1>
-                      <span class="badge text-white" style="background-color: #e01404;">DESTACADO LA ÚLTIMA SEMANA</span>
+                      <span class="badge text-white" style="background-color: #e01404;">DESTACADO LA ÚLTIMA
+                        SEMANA</span>
                     </div>
                   </div>
                 </div>
@@ -756,33 +907,39 @@
     </div>
   </div>
   </div>
-  <footer class="footer-07" style="background-color: #302c2c">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-12 text-center text-white">
-          <p class="menu">
-          <p>Política de cookies</p>
-          <p>Configuración de cookies</p>
-          <p>Política de privacidad </p>
-          <p>Contacto </p>
-          <p>Ayuda </p>
-          </p>
 
-          <div class="row mt-1">
-            <div class="col-md-12 text-center text-white">
-              <p class="copyright">
-                © Octubre 2022 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados. </p>
-            </div>
-          </div>
-        </div>
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">Contáctanos</h1>
 
-        <!-- <ul class="footer-social p-0">
-    <li class="img"></span></a></li>
-    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><span class="ion-logo-facebook"></span></a></li>
-    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram"><span class="ion-logo-instagram"></span></a></li>
-    </ul>
+      <h2>Contacto</h2>
+
+      <address>
+        P Sherman, 42 Wallaby Way, Sydney<br>
+        
+        <a class="footer__btn" href="mailto:example@gmail.com">Envíanos un correo</a>
+
+        <p class="social__title">Síguenos en</p>
+        <img src="social.png" alt="social">
+      </address>
     </div>
-    </div> -->
+
+    <ul class="footer__nav">
+      <h2 class="nav__title">Política de cookies</h2>
+      <h2 class="nav__title">Configuración de cookies</h2>
+      <h2 class="nav__title">Política de privacidad</h2>
+      <h2 class="nav__title">Términos y condiciones</h2>
+    </ul>
+
+    <div class="legal">
+      <p>&copy; Octubre 2022 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados.</p>
+
+      <div class="legal__links">
+        <span>Elaborado por César y Alex <span class="heart"> 😊👍
+          </span>
+        </span>
+      </div>
+    </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
