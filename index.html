@@ -1,23 +1,961 @@
-<!doctype html>
 <html lang="en">
-  <head>
-    <link rel="icon" href="marcalogo.ico">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+  .dropd {
+    font-weight: bold;
+  }
 
-    <title>MARCA - Diario online líder en información deportiva</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  t1 {
+    color: #ca0612;
+    display: block;
+    font-size: small;
+    letter-spacing: 0 px;
+  }
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  b1 {
+    font-size: x-large;
+    display: block;
+    margin-bottom: 0.67 em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    letter-spacing: -1.2 px;
+  }
+
+  b2 {
+    font-size: large;
+    display: block;
+    margin-bottom: 0.67 em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    letter-spacing: -.7 px;
+  }
+
+  <!-- Acomodar escudos de equipos -- div.headerxd div {
+    margin-bottom: -40;
+  }
+
+  ul.equipos li {
+    display: inline;
+    margin-right: 25;
+    margin-bottom: 0;
+  }
+
+  div.list div {
+    justify-content: center;
+
+  }
+
+  <!-- Animación barra de búsqueda -- .search-click {
+    border: 1 px solid #ccc;
+    outline: none;
+    background-size: 22 px;
+    background-position: 13 px;
+    border-radius: 10 px;
+    width: 50 px;
+    height: 50 px;
+    padding: 25 px;
+    transition: all 0.5 s;
+  }
+
+  .search-click:focus {
+    width: 300 px;
+    padding-left: 50 px;
+  }
+
+  .search-click {
+    position: relative;
+    overflow: hidden;
+    height: 50 px;
+  }
+
+  .search-click input {
+    background: transparent;
+    border: 1 px solid #ccc;
+    outline: none;
+    position: absolute;
+    width: 300 px;
+    height: 50 px;
+    left: 0 auto;
+    padding: 10 px;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    font-family: acumin-pro, system-ui, sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    align-items: start;
+    min-height: 100vh;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 30px 20px 30px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .footer>* {
+    flex: 1 100%;
+  }
+
+  .footer__addr {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
+  }
+
+  .footer__logo {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    text-transform: lowercase;
+    font-size: 1.5rem;
+  }
+
+  .footer__addr h2 {
+    margin-top: 1.3em;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .nav__title {
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  .footer address {
+    font-style: normal;
+    color: #999;
+  }
+
+  .footer__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    max-width: max-content;
+    background-color: rgb(33, 33, 33, 0.07);
+    border-radius: 100px;
+    color: #2f2f2f;
+    line-height: 0;
+    margin: 0.6em 0;
+    font-size: 1rem;
+    padding: 0 1.3em;
+  }
+
+  .footer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .footer li {
+    line-height: 2em;
+  }
+
+  .footer a {
+    text-decoration: none;
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .footer__nav>* {
+    flex: 1 50%;
+    margin-right: 1.25em;
+  }
+
+  .nav__ul a {
+    color: #999;
+  }
+
+  .nav__ul--extra {
+    column-count: 2;
+    column-gap: 1.25em;
+  }
+
+  .legal {
+    display: flex;
+    flex-wrap: wrap;
+    color: #999;
+  }
+
+  .legal__links {
+    display: flex;
+    align-items: center;
+  }
+
+  .heart {
+    color: #2f2f2f;
+  }
+
+  @media screen and (min-width: 24.375em) {
+    .legal .legal__links {
+      margin-left: auto;
+    }
+  }
+
+  @media screen and (min-width: 40.375em) {
+    .footer__nav>* {
+      flex: 1;
+    }
+
+    .nav__item--extra {
+      flex-grow: 2;
+    }
+
+    .footer__addr {
+      flex: 1 0px;
+    }
+
+    .footer__nav {
+      flex: 2 0px;
+    }
+  }
+</style>
+
+<head>
+  <link rel="icon" href="marcalogo.ico">
+  <title>MARCA - Diario online líder en información deportiva</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #fffcfc;">
+
+  <div class="container-fluid py-2 d-none d-sm-block">
+    <header >
+      <div class="header row justify-content-between align-items-center mx-3 ">
+
+        <div class="col-2 pt-1">
+          <img src="lo+trend.JPG" alt="lo+trend" width="10%" height="10%">
+          <a class=" text-dark" href="#">Lo + Trending</a>
+        </div>
+
+        <div class="col-2">
+          <img src="marca.png" alt="MARCA" width="80%" >
+        </div>
+
+        <div id="button" class="col-2">
+          <a class="btn btn-sm btn-outline-danger text-white" style="background-color: #ca0612" href="#">Subscribete</a>
+          <a class="btn btn-sm btn-outline-black-50 text-danger border border-black" href="#">Inicia sesión</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <nav class="navbar sticky-top navbar-expand-md navbar-dark" style="background-color: #ca0612">
+    <!-- <a class="navbar-brand d-md-none font-weight-bold" href="#">MARCA</a> -->
+    <img src="Marca_logo_white_red_background.png " alt="MARCA" width="15%">
+
+    <div class="border">
+      <a class="btn btn-sm btn-outline-danger text-danger bg-white d-block d-sm-none" href="#">Inicia sesión</a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <div class="container-fluid ml-5">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fútbol
+            </a>
+            <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">1</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">2</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fútbol Internacional
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">a</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">b</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">c</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Motor
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">x</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">y</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">z</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Otros deportes
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white font-weight-bold" href="#">a</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">e</a>
+              <a class="dropdown-item text-white font-weight-bold" href="#">i</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white font-weight-bold" href="#">Más +</a>
+          </li>
+        </ul>
+
+        <form class="form-inline ml-auto mr-5 my-lg-0">
+
+          <input class="form-control mr-sm-2" type="search" placeholder="Busca en Marca 🔎 " aria-label="Search">
+        </form>
+      </div>
+
+
+
+    </div>
+
+
+  </nav>
+
+
+  <div class="container-fluid pt-3 pb-1 bg-light align-items-center list d-none d-sm-block">
+    <div class="container">
+      <ul class="equipos">
+        <li><img src="1america.png" alt="america" width="30"></li>
+        <li><img src="2atlas.png" alt="atlas" width="30"></li>
+        <li><img src="3sanluis.png" alt="sanluis" width="30"></li>
+        <li><img src="4cruzazul.png" alt="cruzazul" width="30"></li>
+        <li><img src="5chivas.png" alt="chivas" width="30"></li>
+        <li><img src="6juarez.png" alt="juarez" width="30"></li>
+        <li><img src="7leon.png" alt="leon" width="30"></li>
+        <li><img src="8mazatlan.png" alt="mazatlan" width="30"></li>
+        <li><img src="9monterrey.png" alt="monterrey" width="30"></li>
+        <li><img src="10necaxa.png" alt="necaxa" width="30"></li>
+        <li><img src="11pachuca.png" alt="pachuca" width="30"></li>
+        <li><img src="12puebla.png" alt="puebla" width="30"></li>
+        <li><img src="13pumas.png" alt="pumas" width="30"></li>
+        <li><img src="14queretaro.png" alt="queretaro" width="30"></li>
+        <li><img src="15santos.png" alt="santos" width="30"></li>
+        <li><img src="16tigres.png" alt="tigres" width="30"></li>
+        <li><img src="17xolos.png" alt="xolos" width="30"></li>
+        <li><img src="18toluca.png" alt="toluca" width="30"></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="col-4 d-flex justify-content-end align-items-center" style="padding-right: 10%;">
+    <a class="text-white" href="#" aria-label="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"
+        focusable="false">
+        <title>Search</title>
+        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+        <path d="M21 21l-5.2-5.2"></path>
+      </svg>
+    </a>
+    </nav>
+  </div>
+
+  <div class="container-fluid pt-0 ">
+
+    <div class="jumbotron jumbotron-fluid py-2 mb-1" style="background-color: #ca0612">
+      <div class="container-fluid justify-content-center">
+        <div class="row align-items-center">
+          <div class="col-sm-3 border- rounded text-center">
+
+            <div class="container ">
+              <t1 class="text-white ">¡YA ESTÁN AQUI!</t1>
+              <b2 class="font-weight-bold align-middle text-white">
+                ¡LOS ÚLTIMOS RESULTADOS DE LA LIGA!
+              </b2>
+            </div>
+
+          </div>
+
+          <div class="col-sm-9">
+
+            <div class="row">
+              <div class="col-1">
+                <li style="width: 100%;" class="carousel-control-prev badge-danger ml-2" role="button"
+                  href="#carouselExampleCaptions" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </li>
+              </div>
+
+              <div class="col-10">
+                <div class="container-fluid bg-white ">
+
+
+
+                  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
+                    <div class="row justify-content-center">
+
+                      <div class="col-md-12">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div class="row ">
+                              <div class="col-md-6">
+
+                                <table class="table table-hover table-sm table
+                                    border-bottom">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="2" class="text-center">FINALIZADO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+
+                                      <td><img src="13pumas.png" alt="" style="width: 7%;"> Pumas</td>
+                                      <td>0</td>
+                                    </tr>
+                                    <tr class="font-weight-bold">
+                                      <td><img src="2atlas.png" alt="" style="width: 7%;"> Atlas</td>
+                                      <td>2</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              <div class="col-md-6">
+                                <table class="table table-hover table-sm table
+                                    border-bottom">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="2" class="text-center">FINALIZADO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="font-weight-bold">
+                                      <td><img src="5chivas.png" alt="" style="width: 7%;"> Chivas</td>
+                                      <td>27</td>
+                                    </tr>
+                                    <tr>
+                                      <td><img src="11pachuca.png" alt="" style="width: 7%;"> Pachuca</td>
+                                      <td>0</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="row">
+                              <div class="col-md-6">
+
+                                <table class="table table-hover table-sm table
+                                    border-bottom">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="2" class="text-center">FINALIZADO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+
+                                      <td><img src="10necaxa.png" alt="" style="width: 7%;"> Necaxa</td>
+                                      <td>1</td>
+                                    </tr>
+                                    <tr class="font-weight-bold">
+                                      <td><img src="19realmadrid.png" alt="" style="width: 7%;"> Real Madrid</td>
+                                      <td>6</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              <div class="col-md-6">
+                                <table class="table table-hover table-sm table
+                                    border-bottom">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="2" class="text-center"> FINALIZADO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="font-weight-bold">
+                                      <td><img src="16tigres.png" alt="" style="width: 7%;"> Tigres</td>
+                                      <td>2</td>
+                                    </tr>
+                                    <tr class="font-weight-bold">
+
+                                      <td><img src="1america.png" alt="" style="width: 7%;"> América</td>
+                                      <td>2</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="row">
+                              <div class="col-md-6">
+
+                                <table class="table table-hover table-sm table
+                                    border-bottom">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="2" class="text-center"> FINALIZADO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="font-weight-bold">
+
+                                      <td><img src="15santos.png" alt="" style="width: 7%;"> Santos</td>
+                                      <td>2</td>
+                                    </tr>
+                                    <tr>
+                                      <td><img src="14queretaro.png" alt="" style="width: 7%;"> Querétaro</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              <div class="col-md-6">
+                                <table class="table table-hover table-sm table
+                                    border-bottom">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="2" class="text-center">FINALIZADO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="font-weight-bold">
+                                      <td><img src="4cruzazul.png" alt="" style="width: 7%;"> Cruz Azul</td>
+                                      <td>2</td>
+                                    </tr>
+                                    <tr>
+
+                                      <td><img src="18toluca.png" alt="" style="width: 7%;"> Toluca</td>
+                                      <td>0</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                </div>
+              </div>
+
+              <div class="col-1">
+                <li style="width: 100%;" class="carousel-control-next badge-danger mr-2" role="button"
+                  href="#carouselExampleCaptions" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </li>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="containter-fluid">
+      <div class="row justify-content-center">
+
+        <div class="col-md-2 mt-3 d-none d-sm-block">
+          <div class="container-fluid border text-center my-1">
+            <b2 class="small font-weight-bold">PUBLICIDAD</b2>
+            <img src="ad1.gif" alt="" style="height: auto;
+                max-width: 100%;">
+          </div>
+        </div>
+
+        <div class="col-md-8 ">
+
+          <div class="mt-3 py-3 border-top border-bottom border-secondary">
+            <div class="row">
+              <div class="col-md-7 col-lg-8">
+                <div class="card border-0" href="#xd">
+                  <img class="card-img-top" src="img1.jpg" alt="Card image
+                      cap">
+                  <span class="badge text-white" style="background-color: #ca0612;">HOT NEWS</span>
+                  <div class="card-body">
+                    <t1 class="small font-weight-bold text-danger">FUTBOLISTAS
+                      HUMILDES</t1>
+                    <b1 class="card-text">" ESTE ES MI ÚLTIMO
+                      SIUUUUUUUUUUUUU": EL CÉLEBRE FUTBOLISTA DA SUS ÚLTIMAS
+                      PALABRAS ANTES DE PARTIR </b1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 col-lg-4">
+                <div class="list-group">
+                  <li class="list-group-item bg-light border-0 my-2">
+                    <div class="row align-items-center">
+                      <div class="col-md-8 col-sm-6 col-6 pr-1">
+                        <t1 class="small font-weight-bold text-danger">FUTBOLISTAS
+                          HUMILDES</t1>
+                        <b2 href="#">MESSI ES TREMENDO PECHO FRIO Y ÉSTA ES LA
+                          RAZÓN #1</b2>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-6 ">
+                        <img src="small1.webp" alt="" style="max-height: auto;
+                            max-width: 100%;">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-light border-0 my-2">
+                    <div class="row align-items-center">
+                      <div class="col-md-8 col-sm-6 col-6 pr-1">
+                        <span class="badge text-white" style="background-color: #ca0612;">HOT NEWS</span>
+                        <t1 class="small font-weight-bold text-danger">SELECCIÓN
+                          MEXICANA</t1>
+                        <b2 href="#">¡LAS PODEROSISÍMAS CHIVAS DE GUADALAJARA
+                          LO HICIERON DE NUEVO!</b2>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-6">
+                        <img src="small1.webp" alt="" style="max-height: auto;
+                            max-width: 100%;">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-light border-0 my-2">
+                    <div class="row align-items-center">
+                      <div class="col-md-8 col-sm-6 col-6 pr-1">
+                        <t1 class="small font-weight-bold text-danger">NOTAS
+                          DEL AUTOR</t1>
+                        <b2 href="#">"NO SÉ NADA DE FUTBOL; LOS ARTICULOS SON
+                          INVENTADOS": ADMITE EL AUTOR</b2>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-6">
+                        <img src="small1.webp" alt="" style="max-height: auto;
+                            max-width: 100%;">
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class=" border-bottom border-secondary mb-3 pb-3 ">
+            <div class="row ">
+              <div class="col-md-8">
+                <div class="border-bottom border-secondary py-3">
+                  <div class="row align-items-center">
+                    <div class="col-md-7 col-sm-6 col-6">
+                      <img src="img1.jpg" alt="" style="height: auto;
+                          max-width: 100%;">
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6 ">
+                      <t1 class="small font-weight-bold text-danger">FUTBOLISTAS
+                        HUMILDES</t1>
+                      <b1 href="#">MADRE MIA, EL BICHO. EL BICHO. ¡EL
+                        BICHOOOOO!</b1>
+                      <span class="badge text-white" style="background-color: #ca0612;">DESTACADO
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row py-3">
+                  <div class="col-md-5 col-lg-5">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger ">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7 col-lg-7">
+                    <div class="list-group">
+                      <li class="list-group-item bg-light border-0 my-2">
+                        <div class="row align-items-center">
+                          <div class="col-md-8 col-sm-6 col-6 pr-1">
+                            <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                            <b2 href="#">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                          </div>
+                          <div class="col-md-4 col-sm-6 col-6">
+                            <img src="small1.webp" alt="" style="max-height:
+                                auto;
+                                max-width: 100%;">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item bg-light border-0 my-2">
+                        <div class="row align-items-center">
+                          <div class="col-md-8 col-sm-6 col-6 pr-1">
+                            <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                            <b2 href="#">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                          </div>
+                          <div class="col-md-4 col-sm-6 col-6">
+                            <img src="small1.webp" alt="" style="max-height:
+                                auto;
+                                max-width: 100%;">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item bg-light border-0 my-2">
+                        <div class="row align-items-center">
+                          <div class="col-md-8 col-sm-6 col-6 pr-1">
+                            <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                            <b2 href="#">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                          </div>
+                          <div class="col-md-4 col-sm-6 col-6">
+                            <img src="small1.webp" alt="" style="max-height:
+                                auto;
+                                max-width: 100%;">
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-4 mt-3">
+                <div class="container-fluid border text-center my-1 ">
+                  <b2 class="small font-weight-bold">PUBLICIDAD</b2>
+                  <img src="ad1.gif" alt="" style="height: auto;
+                      max-width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class=" border-bottom border-secondary mb-3 pb-3 ">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="row mb-2">
+                  <div class="col-md-4">
+                    <div class="card border-0 bg-light ">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-md-4">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="container-fluid border text-center my-1 py-1">
+                  <b2 class="small font-weight-bold">PUBLICIDAD</b2>
+                  <img src="ad1.gif" alt="" style="height: auto;
+                      max-width: 100%;">
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class=" border-bottom border-secondary mb-3 ">
+            <div class="row ">
+              <div class="col-md-8">
+                <div class="border-bottom border-secondary py-3">
+                  <div class="row align-items-center">
+                    <div class="col-md-7 col-sm-6 col-6">
+                      <img src="img1.jpg" alt="" style="height: auto;
+                          max-width: 100%;">
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6 ">
+                      <t1 class="small font-weight-bold text-danger">FUTBOLISTAS
+                        HUMILDES</t1>
+                      <b1 href="#">MADRE MIA, EL BICHO. EL BICHO. ¡EL
+                        BICHOOOOO!</b1>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row py-3">
+                  <div class="col-md-6 col-lg-">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger ">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="card border-0 bg-light">
+                      <img class="card-img-top" src="img1.jpg" alt="Card image
+                          cap">
+                      <div class="card-body">
+                        <t1 class="small font-weight-bold text-danger ">TITULO</t1>
+                        <b2 class="card-text">INSERTE NOTICIA SOBRE EL "FUCHO BOLO"</b2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-4 mt-3">
+                <div class="container-fluid border text-center my-1 ">
+                  <b2 class="small font-weight-bold">PUBLICIDAD</b2>
+                  <img src="ad1.gif" alt="" style="height: auto; 
+                      max-width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-2 mt-3 d-none d-sm-block">
+          <div class="container-fluid border text-center my-1 ">
+            <b2 class="small font-weight-bold">PUBLICIDAD</b2>
+            <img src="ad1.gif" alt="" style="height: auto;
+                max-width: 100%;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">Contáctanos</h1>
+
+      <h2>Contacto</h2>
+
+      <address>
+        P Sherman, 42 Wallaby Way, Sydney<br>
+        
+        <a class="footer__btn" href="mailto:example@gmail.com">Envíanos un correo</a>
+
+        <p class="social__title">Síguenos en</p>
+        <img src="social.png" alt="social">
+      </address>
+    </div>
+
+    <ul class="footer__nav">
+      <h2 class="nav__title">Política de cookies</h2>
+      <h2 class="nav__title">Configuración de cookies</h2>
+      <h2 class="nav__title">Política de privacidad</h2>
+      <h2 class="nav__title">Términos y condiciones</h2>
+    </ul>
+
+    <div class="legal">
+      <p>&copy; Octubre 2022 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados.</p>
+
+      <div class="legal__links">
+        <span>Elaborado por César y Alex <span class="heart"> 😊👍
+          </span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>
